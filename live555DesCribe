@@ -1,0 +1,20 @@
+官方文档 frome http://www.live555.com/liveMedia/#description
+网络文档 
+概述
+live555类继承关系 http://www.live555.com/liveMedia/doxygen/html/inherits.html
+
+UsageEnvironment TaskSchedulers
+    用于scheduling deferrd events 事件调度， for assigning handlers for asynchronous read eventss 分配异步读事件句柄，以及错误输出
+ 并且定义了一个hash table 用于别的代码使用。
+    这两个库是最基础的两个库
+ 
+ groupsock
+    封装了网络接口， encapsulate(封装)
+    
+ liveMedia
+    定义了一系列针对不同媒体类型和编码格式的类，基类是Medium Class
+    
+  BasicUsageEnvironment
+    一个UsageEnvironment的子类实现，用于简单的控制台应用，用select实现事件读取和操作
+    s使用自定义的UsageEnvironment和TaskSchedulers抽象类的i子类，可以在d特定的环境中运行，不需要过多的修改，
+    在图形环境中，抽象类的TaskScheduler的子类在实现doEventLoop()的时候应该与图形环境中自己的事件处理框架集成！
